@@ -3,8 +3,6 @@ package com.example.menu
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.widget.Button
 
@@ -14,12 +12,13 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val btnArea=findViewById<Button>(R.id.btnArea)
+        val btnArea = findViewById<Button>(R.id.btnArea)
         val btnPeliculas = findViewById<Button>(R.id.btnPeliculas)
         val btnIMC = findViewById<Button>(R.id.btnIMC)
+        val btnFormulario = findViewById<Button>(R.id.btnFormulario)
 
         btnArea.setOnClickListener {
-            val intent=Intent(this,AreaActivity::class.java)
+            val intent = Intent(this, AreaActivity::class.java)
             startActivity(intent)
         }
 
@@ -30,6 +29,11 @@ class MainActivity : AppCompatActivity() {
 
         btnIMC.setOnClickListener {
             val intent = Intent(this, IMC_Calculator::class.java)
+            startActivity(intent)
+        }
+
+        btnFormulario.setOnClickListener {
+            val intent = Intent(this, FormularioAlumnos::class.java)
             startActivity(intent)
         }
     }
